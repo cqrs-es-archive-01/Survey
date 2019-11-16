@@ -72,6 +72,12 @@ Full Modular Monolith .NET application with Domain-Driven Design approach.
 
 This is a list of the main goals of this repository:
 
+- Business requirements gathering and analysis
+- System analysis
+- Domain exploration
+- Domain distillation
+- Domain-Driven Design patterns
+- Architecture evaluation, quality attributes analysis
 - Showing how you can implement a **monolith** application in a **modular** way
 - Presentation of the **full implementation** of an application
   - This is not another simple application
@@ -82,24 +88,14 @@ This is a list of the main goals of this repository:
 - Presentation of some **architectural** considerations, decisions, approaches
 - Presentation of the implementation using **Domain-Driven Design** approach (**tactical** patterns)
 - Presentation of the implementation of **Unit Tests** for Domain Model (Testable Design in mind)
-
-### 1.2 Out of Scope
-
-This is a list of subjects which are out of scope for this repository:
-- Business requirements gathering and analysis
-- System analysis
-- Domain exploration
-- Domain distillation
-- Domain-Driven Design **strategic** patterns
-- Architecture evaluation, quality attributes analysis
 - Integration, system tests
-- Project management
 - Infrastructure
 - Containerization
 - Software engineering process, CI/CD
 - Deployment process
 - Maintenance
 - Documentation
+
 
 ### 1.3 Reason
 
@@ -124,13 +120,6 @@ Always functional requirements, quality attributes, technical constraints and ot
 
 Because of the above, the architecture and implementation presented in this repository is **one of the many ways** to solve some problems. Take from this repository as much as you want, use it as you like but remember to **always pick the best solution which is appropriate to the problem class you have**.
 
-### 1.5 Give a Star
-
-My primary focus in this project is on quality. Creating a good quality product involves a lot of analysis, research and work. It takes a lot of time. If you like this project, learned something or you are using it in your applications, please give it a star :star:.  This is the best motivation for me to continue this work. Thanks!
-
-### 1.6 Share It
-
-There are very few really good examples of this type of application. If you think this repository makes a difference and is worth it, please share it with your friends and on social networks. I will be extremely grateful.
 
 ## 2. Domain
 
