@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Survey.Common\Survey.Common.csproj" />
+    <ProjectReference Include="..\Survey.Transverse.Contract\Survey.Transverse.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
