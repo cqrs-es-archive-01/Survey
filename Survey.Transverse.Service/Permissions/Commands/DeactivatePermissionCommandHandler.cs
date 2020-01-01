@@ -24,7 +24,10 @@ namespace Survey.Transverse.Service.Permissions.Commands
         {
             var permission = _permissionRepository.FindByKey(command.Id);
             permission.Deactivate(command.DisabledBy);
-            _permissionRepository.Save();
+            if (!_permissionRepository.Save())
+            {
+                return Result.Failure("Permission could not be deactivated");
+            }
             return Result.Ok();
         }
     }

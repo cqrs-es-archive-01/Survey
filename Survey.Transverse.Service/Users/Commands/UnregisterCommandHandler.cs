@@ -26,7 +26,10 @@ namespace Survey.Transverse.Service.Users.Commands
             if (user == null)
                 return Result.Failure($"No user found for Id= {command.Id}");
             user.Unregister(command.By,command.Reason);
-            _userRepository.Save();
+            if (!_userRepository.Save())
+            {
+                return Result.Failure("User could not be unregistred");
+            }
             return Result.Ok();
         }
     }

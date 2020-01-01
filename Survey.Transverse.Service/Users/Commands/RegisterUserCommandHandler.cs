@@ -24,7 +24,10 @@ namespace Survey.Transverse.Service.Users.Commands
         {
             var user = new User(command.FirstName, command.LastName, command.Email, command.Password, command.Permissions);
             _userRepository.Insert(user);
-            _userRepository.Save();
+            if (!_userRepository.Save())
+            {
+                return Result.Failure("User could not be saved");
+            }
             return Result.Ok();
         }
     }

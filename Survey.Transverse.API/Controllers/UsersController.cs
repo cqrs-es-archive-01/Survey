@@ -23,12 +23,15 @@ namespace Survey.Transverse.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly Dispatcher _dispatcher;
+        private readonly LinkGenerator _linkGenerator;
 
         public UsersController(Dispatcher dispatcher,
-                               IMapper mapper)
+                               IMapper mapper,
+                               LinkGenerator linkGenerator)
         {
             _mapper = mapper;
             _dispatcher = dispatcher;
+            _linkGenerator = linkGenerator;
         }
 
 

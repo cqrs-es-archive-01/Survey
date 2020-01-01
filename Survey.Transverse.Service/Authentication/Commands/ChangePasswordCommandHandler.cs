@@ -30,8 +30,11 @@ namespace Survey.Transverse.Service.Authentication.Commands
                 return Result.Failure("Incorrect password");
             else
                 user.SetPassword(command.NewPassword);
-            
-            _userRepository.Save();
+
+            if (!_userRepository.Save())
+            {
+                return Result.Failure("Cound not update user password");
+            }
             return Result.Ok();
         }
     }

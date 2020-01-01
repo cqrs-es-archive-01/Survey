@@ -25,7 +25,10 @@ namespace Survey.Transverse.Service.Features.Commands
             var feature = new Feature(command.Label, command.Description, command.Action, command.Controller,
                                       command.ControllerActionName, command.CreatedBy);
             _featureRepository.Insert(feature);
-            _featureRepository.Save();
+            if(!_featureRepository.Save())
+            {
+                return Result.Failure("Feature could not be saved");
+            }
             return Result.Ok();
         }
     }

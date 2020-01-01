@@ -26,7 +26,10 @@ namespace Survey.Transverse.Service.Features.Commands
             if (feature == null)
                 return Result.Failure($"No feature found for Id= {command.Id}");
             feature.Deactivate(command.DisabledBy);
-            _featureRepository.Save();
+            if (!_featureRepository.Save())
+            {
+                return Result.Failure("Feature could not be deactivated");
+            }
             return Result.Ok();
         }
     }

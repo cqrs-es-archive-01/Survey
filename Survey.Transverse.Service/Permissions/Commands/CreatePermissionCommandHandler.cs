@@ -26,7 +26,10 @@ namespace Survey.Transverse.Service.Permissions.Commands
         {
             var permission = new Permission(command.Label, command.Description, command.CreatedBy,command?.Features);
             _permissionRepository.Insert(permission);
-            _permissionRepository.Save();
+           if(! _permissionRepository.Save())
+            {
+                return Result.Failure("Permission could not be saved");
+            }
             return Result.Ok();
         }
     }

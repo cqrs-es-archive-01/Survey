@@ -26,9 +26,15 @@ namespace Survey.Transverse.Service.Permissions.Commands
         public Result Handle(EditPermissionCommand command)
         {
             var permission = _permissionRepository.FindByInclude(a => a.Id == command.Id, a => a.PermissionFeatures).FirstOrDefault();
+            if (permission == null)
+                return Result.Failure($"Could not fetch the permission");
+
             permission.Update(command.Label, command.Description, command?.Features, command.DeleteExistingFeatures);
             _permissionRepository.UpdateFeatures(permission, command.DeleteExistingFeatures);
-            _permissionRepository.Save();
+            if (!_permissionRepository.Save())
+            {
+                return Result.Failure("Permission could not be saved");
+            }
             return Result.Ok();
         }
     }

@@ -29,7 +29,10 @@ namespace Survey.Transverse.Service.Permissions.Commands
             feature.UpdateInfo(command.Label, command.Description, command.Action, command.Controller,
                                command.ControllerActionName);
 
-            _featureRepository.Save();
+            if (!_featureRepository.Save())
+            {
+                return Result.Failure("Feature could not be updated");
+            }
             return Result.Ok();
         }
     }

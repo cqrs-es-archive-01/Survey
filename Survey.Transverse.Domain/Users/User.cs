@@ -34,6 +34,10 @@ namespace Survey.Transverse.Domain.Users
 
         public User(string firstName, string lastName, string email, string password, List<Guid> permissions)
         {
+            //if (permissions == null || permissions.Count == 0)
+            //{
+            //    throw new Exception("User should have at least one permission");
+            //}
             FirstName = firstName;
             LastName = lastName;
             Email = email;
